@@ -43,22 +43,22 @@ console.log("data", indexName)
                 // console.log(pokemonImg.src)
 
                 hp.innerHTML = pokemon.stats[0].base_stat
-                  hp.style.width = `${pokemon.stats[0].base_stat/20}vw`
+                  hp.style.width = `${pokemon.stats[0].base_stat}px`
 
                 attack.innerHTML = pokemon.stats[1].base_stat
-                  attack.style.width = `${pokemon.stats[1].base_stat/20}ch`
+                  attack.style.width = `${pokemon.stats[1].base_stat}px`
 
                 defense.innerHTML = pokemon.stats[2].base_stat
-                  defense.style.width = `${pokemon.stats[2].base_stat/20}vw`
+                  defense.style.width = `${pokemon.stats[2].base_stat}px`
 
                 specialAttack.innerHTML = pokemon.stats[3].base_stat
                   specialAttack.style.width = `${pokemon.stats[3].base_stat}px`
 
                 specialDefense.innerHTML = pokemon.stats[4].base_stat
-                  specialDefense.style.width = `${pokemon.stats[4].base_stat/20}vw`
+                  specialDefense.style.width = `${pokemon.stats[4].base_stat}px`
 
                 speed.innerHTML = pokemon.stats[5].base_stat
-                  speed.style.width = `${pokemon.stats[5].base_stat/20}vw`
+                  speed.style.width = `${pokemon.stats[5].base_stat}px`
                   console.log("hp",pokemon.stats[0].base_stat)
                   console.log("attack",pokemon.stats[1].base_stat)
                   console.log("defence",pokemon.stats[2].base_stat)
