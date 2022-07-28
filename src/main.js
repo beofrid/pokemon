@@ -37,17 +37,26 @@ console.log("data", indexName)
             .then(pokemon => {
                 nameArray.push(pokemon.name)
                 pokemonName.innerHTML = pokemon.name
-                pokemonType.innerHTML = pokemon.types[0].type.name
+                pokemonType.innerHTML = `Type: ${pokemon.types[0].type.name}`
+                if (pokemon.sprites.front_default == null){pokemonImg.src = "./assets/notFound.png"}
                 pokemonImg.src = pokemon.sprites.front_default
-                hp.innerHTML = pokemon.stats[0].base_stat
+                console.log(pokemon.sprites.front_default)
+                hp.style.width = `${pokemon.stats[0].base_stat/10}vw`
+                // hp.style.background = `"${color}"`
+
+                console.log(pokemon.stats[0].base_stat/2)
                 attack.innerHTML = pokemon.stats[1].base_stat
                 defense.innerHTML = pokemon.stats[2].base_stat
                 specialAttack.innerHTML = pokemon.stats[3].base_stat
                 specialDefense.innerHTML = pokemon.stats[4].base_stat
                 speed.innerHTML = pokemon.stats[5].base_stat
                 // console.log(pokemon)
+                   
            
             }) 
+
+        
+
     let nameArray= []
     for(let i = 1; i <= 150; i++){
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`

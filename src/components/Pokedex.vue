@@ -16,47 +16,49 @@ export default {
     <header></header>
 
     <section class="pokedex">
-        <div class="pokemonName" id="name"></div>
-        <div class="typeOfPokemon" id="pokemonType">type = </div>
-        <img src="" id="img" alt="pokemon">
+
+        <section class="idContainer font1">
+            <div class="pokemonName font1" id="name"></div>
+            <div class="typeOfPokemon font2" id="pokemonType">type = </div>
+            <img src="../assets/notFound.png" id="img" alt="pokemon">
+        </section>
 
         <!-- Health Points -->
-        <section class="statsContainer"> 
-            <div class="stats">HP:</div>
-            <div class="stats" id="hp"></div>
+        <section class="statsContainer font2"> 
+            <div class="stats1">hp</div>
+            <div class="stats2" id="hp"></div>
         </section>
 
         <!-- Attack -->
-        <section class="statsContainer">
-            <div class="stats">attack = </div>
-            <div class="stats" id="attack"></div>
+        <section class="statsContainer font2">
+            <div class="stats1">attack </div>
+            <div class="stats2" id="attack"></div>
         </section>
 
         <!-- defense -->
-        <section class="statsContainer">
-            <div class="stats">defense = </div>
-            <div class="stats" id="defense"><div class="defense"></div></div>
+        <section class="statsContainer font2">
+            <div class="stats1">defense</div>
+            <div class="stats2" id="defense"><div class="defense"></div></div>
 
         </section>
         
         <!-- special-attack -->
-        <section class="statsContainer">
-            <div class="stats">special-attack = </div>
-            <div class="stats" id="sepcialAttack"><div class="sepcialAttack"></div></div>
+        <section class="statsContainer font2">
+            <div class="stats1">special-attack</div>
+            <div class="stats2" id="sepcialAttack"><div class="sepcialAttack"></div></div>
         
         </section>
         
         <!-- special-defense -->
-        <section class="statsContainer">
-            <div class="stats">special-defense = </div>
-            <div class="stats" id="specialDefense"></div>
-
+        <section class="statsContainer font2">
+            <div class="stats1">special-defense</div>
+            <div class="stats2" id="specialDefense"></div>
         </section>
         
         <!-- speed = -->
-        <section class="statsContainer">
-            <div class="stats">speed = </div>
-            <div class="stats" id="speed"></div>
+        <section class="statsContainer font2">
+            <div class="stats1">speed</div>
+            <div class="stats2" id="speed"></div>
 
         </section>
         
@@ -73,20 +75,44 @@ export default {
 
 
 <style scoped>
+.idContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.font1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 13pt;
+}
+.font2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8pt;
+}
+
 .pokedex {
     width: 20vw;
-    background-color: darkblue;
-        overflow: hidden;
+    background-image: linear-gradient(45deg, rgb(95, 95, 255), rgb(138, 182, 233));
+    overflow: hidden;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 
 }
 .statsContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-left;
+    margin-top: 5px;
     
     }
-.stats {
+.stats1 {
     border: 1pt solid black;
     width: 9vw;}
+.stats2 {
+    /* border: 1pt solid red; */
+    box-shadow: inset 3px 3px 5px rgb(80, 9, 9),
+        inset -3px -3px 5px rgb(247, 94, 119),
+        -1px -1px 3px green
+    }
 .defense {
     display: none;
     background: red;
