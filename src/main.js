@@ -38,18 +38,34 @@ console.log("data", indexName)
                 nameArray.push(pokemon.name)
                 pokemonName.innerHTML = pokemon.name
                 pokemonType.innerHTML = `Type: ${pokemon.types[0].type.name}`
-                if (pokemon.sprites.front_default == null){pokemonImg.src = "./assets/notFound.png"}
                 pokemonImg.src = pokemon.sprites.front_default
-                console.log(pokemon.sprites.front_default)
-                hp.style.width = `${pokemon.stats[0].base_stat/10}vw`
-                // hp.style.background = `"${color}"`
+                // if (!pokemonImg.src){pokemonImg.src = "https://raw.githubusercontent.com/beofrid/pokemon/main/src/assets/notFound.png"}
+                // console.log(pokemonImg.src)
 
-                console.log(pokemon.stats[0].base_stat/2)
+                hp.innerHTML = pokemon.stats[0].base_stat
+                  hp.style.width = `${pokemon.stats[0].base_stat/20}vw`
+
                 attack.innerHTML = pokemon.stats[1].base_stat
+                  attack.style.width = `${pokemon.stats[1].base_stat/20}ch`
+
                 defense.innerHTML = pokemon.stats[2].base_stat
+                  defense.style.width = `${pokemon.stats[2].base_stat/20}vw`
+
                 specialAttack.innerHTML = pokemon.stats[3].base_stat
+                  specialAttack.style.width = `${pokemon.stats[3].base_stat}px`
+
                 specialDefense.innerHTML = pokemon.stats[4].base_stat
+                  specialDefense.style.width = `${pokemon.stats[4].base_stat/20}vw`
+
                 speed.innerHTML = pokemon.stats[5].base_stat
+                  speed.style.width = `${pokemon.stats[5].base_stat/20}vw`
+                  console.log("hp",pokemon.stats[0].base_stat)
+                  console.log("attack",pokemon.stats[1].base_stat)
+                  console.log("defence",pokemon.stats[2].base_stat)
+                  console.log("sa",pokemon.stats[3].base_stat)
+                  console.log("sd",pokemon.stats[4].base_stat)
+                  console.log("speed",pokemon.stats[5].base_stat)
+
                 // console.log(pokemon)
                    
            

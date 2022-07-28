@@ -1,8 +1,8 @@
 
 <template>
-  <div>
-    <Pokedex></Pokedex>
-    <search></search>
+  <div class="container">
+    <Pokedex class="pokedexStyle"></Pokedex>
+    <search class="searchStyle"></search>
       
   
   </div>
@@ -31,5 +31,18 @@ export default {
 
 
 <style scoped>
-
+.container{
+  width: 50vw;
+  height: 50vh;
+  background-color: brown;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.pokedexStyle {
+  flex-grow: 2;
+  }
+.searchStyle{
+  background: pink
+  }
 </style>
