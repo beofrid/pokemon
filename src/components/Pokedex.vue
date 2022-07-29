@@ -22,7 +22,7 @@ export default {
         <div id="pokedexContent" class="pokedexContent pokedexLaunch transition">
             
             <section class="idContainer font1">
-                <img src="/assets/notFound.png" class="img" id="img" alt="pokemon">
+                <img src="" class="img" id="img" alt="pokemon">
                 <div class="font1" id="name"></div>
                 <div class="font2" id="pokemonType">type = </div>
             </section>
@@ -127,7 +127,7 @@ export default {
 
 .pkdx3 {
     position: fixed;
-    margin-top: -312px;
+    margin-top: -316px;
     margin-left: -2px;
     /* display: none; */
 }
@@ -178,14 +178,15 @@ export default {
 .pokedexLaunch {
     transform: translateY(-175px);
     filter: contrast(0%);
+    margin: 0 auto;
+    width: 306px;
     }
 
 
 .statsContainer {
     display: flex;
     justify-content: space-left;
-    margin-top: 5px;
-    
+    margin-top: 5px;    
     }
 .stats1 { 
     margin-left: 5px;

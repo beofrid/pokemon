@@ -19,6 +19,7 @@ const speed = document.getElementById("speed")
 const input = document.getElementById("myInput")
 const button = document.getElementById("button")
 var indexName = "polteageist"
+let status = 0
 // console.log(indexName)
 
 
@@ -31,33 +32,46 @@ const pokedexContent = document.getElementById("pokedexContent")
 
 button.addEventListener('click', indexPokemonName)
 function indexPokemonName() {
-    // console.log("HI", input.value)
     indexName = input.value
     getData()
-    // pokedexContent.classList.add("pokedexLaunch")
-    // pokedexTop.style.transform = "translateY(0px)"
-    // pokedexBottom.style.transform = "translateY(0px)"
-    // pokedexMiddle.classList.remove("opacity")
-    pokedexContent.classList.remove("pokedexLaunch")
-    pokedexTop.style.transform = "translateY(-80px)"
-    pokedexBottom.style.transform = "translateY(235px)"
-    pokedexMiddle.classList.add("opacity")
+    
+    console.log(pokemonName.innerHTML)
+    if (pokemonName.innerHTML == undefined){alert("HI")}
+    if (status === 0){
+      pokedexContent.classList.remove("pokedexLaunch")
+      pokedexTop.style.transform = "translateY(-80px)"
+      pokedexBottom.style.transform = "translateY(235px)"
+      pokedexMiddle.classList.add("opacity")
+
+      status++
+  }
+  else if (status === 1) {
+      pokedexContent.classList.add("pokedexLaunch")
+      pokedexTop.style.transform = "translateY(0px)"
+      pokedexBottom.style.transform = "translateY(0px)"
+      pokedexMiddle.classList.remove("opacity")
+      
+      status--
+  }
+    
 
 
     return indexName
   }
 
+function again() {alert("a")}
 
 function getData() {
-console.log("data", indexName)
-    
     const url = `https://pokeapi.co/api/v2/pokemon/${indexName}`
         fetch (url)
             .then(response => response.json())    
             .then(pokemon => {
+              console.log(pokemon)
                 nameArray.push(pokemon.name)
                 pokemonName.innerHTML = pokemon.name
                 pokemonType.innerHTML = `Type: ${pokemon.types[0].type.name}`
+                console.log(pokemon.types[0].type.name)
+
                 pokemonImg.src = pokemon.sprites.front_default
 
                 hp.innerHTML = pokemon.stats[0].base_stat
@@ -98,13 +112,12 @@ console.log("data", indexName)
             .then(response => response.json())    
             .then(pokemon => {
                 nameArray.push(pokemon.name)
-                
-                // console.log(pokemon)
-           
-            })} 
-            // console.log (nameArray)
+                         
+            })
+    } 
     
-            
+
+// function autocomplete from: https://www.w3schools.com/howto/howto_js_autocomplete.asp
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -113,8 +126,8 @@ function autocomplete(inp, arr) {
         if (!val) { return false;}
         currentFocus = -1;
         a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
+        a.setAttribute("id", this.id + ".Autocomplete-list");
+        a.setAttribute("class", ".autocomplete-items");
         this.parentNode.appendChild(a);
         for (i = 0; i < arr.length; i++) {
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {

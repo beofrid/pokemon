@@ -43,9 +43,7 @@ export default {
 .pokedexStyle {
   height: 600px;
 }
-.searchStyle{
-  background: pink
-  }
+
 @media (max-width: 800px) {
   .container {
     width: 100%;
