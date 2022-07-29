@@ -3,7 +3,7 @@
 Atividade proposta para mostrar competências.
 
 
-#### <p>  Eu iniciei o projeto com Typescript, como sugerido, porém tive algumas dificuldades de tipagem em um código do W3School de preenchimento automático, que não se comportou bem em Typescript. Como o tempo para realização do desafio foi pouco, levando em consideração meu trabalho atual que não tem nenhuma relação com desenvolvimento, optei por desenvolver todo o projeto em Javascript, com o framework Vue.</p>
+#### <p>  Eu iniciei o projeto com Typescript, como sugerido, porém tive algumas dificuldades de tipagem em um código do W3School de preenchimento automático, que não se comportou bem em Typescript. Como o tempo para realização do desafio foi pouco, levando em consideração que eu trabalho em shopping, optei por desenvolver todo o projeto em Javascript para ser mais rápido, com o framework Vue.</p>
 ##Considerações e impressões:
 #### <li/> Nunca tinha usado o vue, foi um desafio bastante interessante. Tenho muito mais o que aprender, mas foi um grande começo. 
 #### <li/> Conhecia pouqíssima coisa sobre Pokémons, pedi ajuda a um amigo para me explicar melhor.
