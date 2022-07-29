@@ -1,5 +1,28 @@
-@import "./base.css";
+body {
+  background-image: linear-gradient(43deg, #3d44b5, #aD44B5, #001126);
+  /* background-image: radial-gradient(#DFFCFF, #00EAEB, #001126, #001126, #FD44B5, #F8FDFC); */
+  background-size: 170% 240%;
+  height: 100vh;
+  animation: gradient 25s ease-in-out infinite;
+  line-height: 2;
+  /* min-width: 850px; */
 
+}
+@keyframes gradient {
+  0% {
+      background: rotate 50deg;
+      background-position: 0% 0%;
+  }
+  35%{
+      background-position: 100% 0%;
+  } 
+  50% {background-position: 100% 100%}
+  65% {background-position: 0% 100%}
+  
+  100%{
+      background-position: 0% 0%;
+  }
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -7,15 +30,11 @@
   font-weight: normal;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 @media (min-width: 1024px) {
   body {
     display: flex;
+    flex-direction: column;
     place-items: center;
   }
 

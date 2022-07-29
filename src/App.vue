@@ -32,6 +32,8 @@ export default {
 
 <style scoped>
 .container{
+  margin: 0 auto;
+  margin-top: 40px;
   width: 50vw;
   height: 50vh;
   background-color: brown;
@@ -39,10 +41,20 @@ export default {
   flex-direction: row-reverse;
   justify-content: center;
 }
-.pokedexStyle {
-  flex-grow: 2;
-  }
+/* .pokedexStyle {
+} */
 .searchStyle{
   background: pink
   }
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+    flex-direction: column; 
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .searchStyle{
+    margin-top: 150px;
+  }
+}
 </style>
