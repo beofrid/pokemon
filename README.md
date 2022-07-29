@@ -24,6 +24,6 @@ Atividade proposta para mostrar competências.
 
 
 ![Job's_done](https://raw.githubusercontent.com/beofrid/The-real-Study-repository/master/Job'sDone.gif?token=GHSAT0AAAAAABW7G5SBGST7CHVHXKB22SVEYXDUHXA)
-<img>
+
 
 (Trabalhei nisso a noite toda, qualquer erro aqui peço desculpa. Não costumo postar sem revisar, mas preciso dormir 😴😂)
