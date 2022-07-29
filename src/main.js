@@ -18,7 +18,7 @@ const speed = document.getElementById("speed")
 
 const input = document.getElementById("myInput")
 const button = document.getElementById("button")
-var indexName = "855"
+var indexName = "polteageist"
 // console.log(indexName)
 
 
@@ -34,9 +34,13 @@ function indexPokemonName() {
     // console.log("HI", input.value)
     indexName = input.value
     getData()
+    // pokedexContent.classList.add("pokedexLaunch")
+    // pokedexTop.style.transform = "translateY(0px)"
+    // pokedexBottom.style.transform = "translateY(0px)"
+    // pokedexMiddle.classList.remove("opacity")
     pokedexContent.classList.remove("pokedexLaunch")
-    pokedexTop.style.transform = "translateY(-100px)"
-    pokedexBottom.style.transform = "translateY(215px)"
+    pokedexTop.style.transform = "translateY(-80px)"
+    pokedexBottom.style.transform = "translateY(235px)"
     pokedexMiddle.classList.add("opacity")
 
 
@@ -55,8 +59,6 @@ console.log("data", indexName)
                 pokemonName.innerHTML = pokemon.name
                 pokemonType.innerHTML = `Type: ${pokemon.types[0].type.name}`
                 pokemonImg.src = pokemon.sprites.front_default
-                // if (!pokemonImg.src){pokemonImg.src = "https://raw.githubusercontent.com/beofrid/pokemon/main/src/assets/notFound.png"}
-                // console.log(pokemonImg.src)
 
                 hp.innerHTML = pokemon.stats[0].base_stat
                   hp.style.width = `${pokemon.stats[0].base_stat-12}px`

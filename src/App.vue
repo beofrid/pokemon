@@ -33,16 +33,16 @@ export default {
 <style scoped>
 .container{
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 50px;
   width: 700px;
-  height: 500px;
-  background-color: brown;
+  height: 600px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
 }
-/* .pokedexStyle {
-} */
+.pokedexStyle {
+  height: 600px;
+}
 .searchStyle{
   background: pink
   }

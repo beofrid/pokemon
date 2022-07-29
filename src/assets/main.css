@@ -1,12 +1,10 @@
 *{overflow: hidden;}
 body {
   background-image: linear-gradient(43deg, #3d44b5, #aD44B5, #001126);
-  /* background-image: radial-gradient(#DFFCFF, #00EAEB, #001126, #001126, #FD44B5, #F8FDFC); */
   background-size: 170% 240%;
   height: 100vh;
   animation: gradient 25s ease-in-out infinite;
   line-height: 2;
-  /* min-width: 850px; */
 
 }
 @keyframes gradient {
@@ -27,8 +25,6 @@ body {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
 }
 
 
