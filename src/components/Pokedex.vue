@@ -13,7 +13,6 @@ export default {
 <template>
 
     <div class="container">
-    <header></header>
 
     <section class="pokedexInterface">
     <div class="pkdx2" id="pokedexMiddle"></div>
@@ -69,7 +68,6 @@ export default {
    
     </section>
 
-   <footer></footer>
   </div>
 </template>
 
@@ -91,9 +89,6 @@ export default {
     position: fixed;
     margin-left: -2px;
     z-index: 1;
-    
-        /* display: none; */
-
 }
 .pkdx2 {
     position:fixed;
@@ -121,15 +116,12 @@ export default {
            -4px -4px 15px blue;
     transition: all 1s ease;
     z-index: 1;
-    
-
 }
 
 .pkdx3 {
     position: fixed;
     margin-top: -316px;
     margin-left: -2px;
-    /* display: none; */
 }
 .font1 {
     font-family: 'Press Start 2P', cursive;
@@ -140,12 +132,10 @@ export default {
     font-size: 8pt;
     font-weight: 600;
 }
-
 .pokedexInterface {
     width: 326px;
     height: 600px;
 }
-
 .img {
     margin-left: 2px;
     border: 2px solid rgb(184, 205, 230);
@@ -174,15 +164,12 @@ export default {
     animation: scan 10s linear infinite;
     animation-delay: 5s;
 }
-
 .pokedexLaunch {
     transform: translateY(-175px);
     filter: contrast(0%);
     margin: 0 auto;
     width: 306px;
     }
-
-
 .statsContainer {
     display: flex;
     justify-content: space-left;

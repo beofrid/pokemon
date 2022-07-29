@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
 import './assets/main.css'
 
 createApp(App).mount('#app')
@@ -17,10 +16,12 @@ const specialDefense = document.getElementById("specialDefense")
 const speed = document.getElementById("speed") 
 
 const input = document.getElementById("myInput")
+const form = document.getElementById("form")
 const button = document.getElementById("button")
+const refresh = document.getElementById("refresh")
 var indexName = "polteageist"
 let status = 0
-// console.log(indexName)
+
 
 
 const pokedexTop = document.getElementById("pokedexTop")
@@ -28,39 +29,58 @@ const pokedexMiddle = document.getElementById("pokedexMiddle")
 const pokedexBottom = document.getElementById("pokedexBottom")
 const pokedexContent = document.getElementById("pokedexContent")
 
-
+refresh.addEventListener('click', refreshSearch)
+function refreshSearch (){
+  pokedexContent.classList.add("pokedexLaunch")
+  pokedexTop.style.transform = "translateY(0px)"
+  pokedexBottom.style.transform = "translateY(0px)"
+  pokedexMiddle.classList.remove("opacity")
+  refresh.classList.add("hidden")
+  status++
+  setTimeout(()=>window.location.reload(true),3300)  
+}
 
 button.addEventListener('click', indexPokemonName)
 function indexPokemonName() {
+
+  //for submit attempt with empty input
+  let message = "Write here"
+  let emptyField = message.split("")
+    if(input.value == ""){
+      input.placeholder = ""
+      let i = 0;
+      function typeWriter() {
+        if (i < message.length) {
+          input.placeholder += message.charAt(i)
+          i++;
+          setTimeout(typeWriter, 200);
+        
+        }
+      }typeWriter()
+    }
+    else { 
+      if (status === 0){
+        form.classList.add("hidden")
+        pokedexContent.classList.remove("pokedexLaunch")
+        pokedexTop.style.transform = "translateY(-80px)"
+        pokedexBottom.style.transform = "translateY(235px)"
+        pokedexMiddle.classList.add("opacity")
+        refresh.classList.remove("hidden")
+  
+        status++
+    }
+    else if (status === 1) {
+       status--
+    }
+     }
+    
+//if the input is filled
     indexName = input.value
     getData()
-    
-    console.log(pokemonName.innerHTML)
-    if (pokemonName.innerHTML == undefined){alert("HI")}
-    if (status === 0){
-      pokedexContent.classList.remove("pokedexLaunch")
-      pokedexTop.style.transform = "translateY(-80px)"
-      pokedexBottom.style.transform = "translateY(235px)"
-      pokedexMiddle.classList.add("opacity")
-
-      status++
-  }
-  else if (status === 1) {
-      pokedexContent.classList.add("pokedexLaunch")
-      pokedexTop.style.transform = "translateY(0px)"
-      pokedexBottom.style.transform = "translateY(0px)"
-      pokedexMiddle.classList.remove("opacity")
-      
-      status--
-  }
-    
-
-
     return indexName
   }
 
-function again() {alert("a")}
-
+//to get API data and fill the stats
 function getData() {
     const url = `https://pokeapi.co/api/v2/pokemon/${indexName}`
         fetch (url)
@@ -91,20 +111,11 @@ function getData() {
 
                 speed.innerHTML = pokemon.stats[5].base_stat
                   speed.style.width = `${pokemon.stats[5].base_stat-12}px`
-                  // console.log("hp",pokemon.stats[0].base_stat)
-                  // console.log("attack",pokemon.stats[1].base_stat)
-                  // console.log("defence",pokemon.stats[2].base_stat)
-                  // console.log("sa",pokemon.stats[3].base_stat)
-                  // console.log("sd",pokemon.stats[4].base_stat)
-                  // console.log("speed",pokemon.stats[5].base_stat)
-
-                // console.log(pokemon)
-                   
-           
             }) 
 
         
-
+//array with the names to the autofill. 
+//to accept more pokemon names just replace the i <= 150 with i <= 905 which is the number of pokemons in the api.
     let nameArray= []
     for(let i = 1; i <= 150; i++){
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`

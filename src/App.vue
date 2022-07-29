@@ -1,7 +1,9 @@
 
 <template>
   <div class="container">
+
     <Pokedex class="pokedexStyle"></Pokedex>
+
     <search class="searchStyle"></search>
       
   
@@ -18,14 +20,8 @@ export default {
   components: {
     search,
     Pokedex
-   
-    
 },
 }
-// console.log(Pokedex)
-
-
-
 </script>
 
 
@@ -35,13 +31,16 @@ export default {
   margin: 0 auto;
   margin-top: 50px;
   width: 700px;
-  height: 600px;
+  height: 900px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
 }
 .pokedexStyle {
   height: 600px;
+}
+.searchStyle{
+    height: 900px;
 }
 
 @media (max-width: 800px) {

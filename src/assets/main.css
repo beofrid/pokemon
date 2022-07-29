@@ -1,22 +1,29 @@
-*{overflow: hidden;}
+*{
+  overflow: hidden;
+}
+
+
 body {
   background-image: linear-gradient(43deg, #3d44b5, #aD44B5, #001126);
   background-size: 170% 240%;
   height: 100vh;
   animation: gradient 25s ease-in-out infinite;
   line-height: 2;
-
 }
+
 @keyframes gradient {
   0% {
-      background: rotate 50deg;
       background-position: 0% 0%;
   }
   35%{
       background-position: 100% 0%;
   } 
-  50% {background-position: 100% 100%}
-  65% {background-position: 0% 100%}
+  50% {
+    background-position: 100% 100%
+  }
+  65% {
+    background-position: 0% 100%
+  }
   
   100%{
       background-position: 0% 0%;
