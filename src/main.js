@@ -8,21 +8,37 @@ createApp(App).mount('#app')
 const pokemonName = document.getElementById("name") 
 const pokemonType = document.getElementById("pokemonType") 
 const pokemonImg = document.getElementById("img") 
+
 const hp = document.getElementById("hp") 
 const attack = document.getElementById("attack") 
 const defense = document.getElementById("defense") 
 const specialAttack = document.getElementById("sepcialAttack") 
 const specialDefense = document.getElementById("specialDefense") 
 const speed = document.getElementById("speed") 
+
 const input = document.getElementById("myInput")
 const button = document.getElementById("button")
-var indexName = "pikachu"
-console.log(indexName)
+var indexName = "855"
+// console.log(indexName)
+
+
+const pokedexTop = document.getElementById("pokedexTop")
+const pokedexMiddle = document.getElementById("pokedexMiddle")
+const pokedexBottom = document.getElementById("pokedexBottom")
+const pokedexContent = document.getElementById("pokedexContent")
+
+
+
 button.addEventListener('click', indexPokemonName)
 function indexPokemonName() {
-    console.log("HI", input.value)
+    // console.log("HI", input.value)
     indexName = input.value
     getData()
+    pokedexContent.classList.remove("pokedexLaunch")
+    pokedexTop.style.transform = "translateY(-100px)"
+    pokedexBottom.style.transform = "translateY(215px)"
+    pokedexMiddle.classList.add("opacity")
+
 
     return indexName
   }
@@ -43,28 +59,28 @@ console.log("data", indexName)
                 // console.log(pokemonImg.src)
 
                 hp.innerHTML = pokemon.stats[0].base_stat
-                  hp.style.width = `${pokemon.stats[0].base_stat}px`
+                  hp.style.width = `${pokemon.stats[0].base_stat-12}px`
 
                 attack.innerHTML = pokemon.stats[1].base_stat
-                  attack.style.width = `${pokemon.stats[1].base_stat}px`
+                  attack.style.width = `${pokemon.stats[1].base_stat-12}px`
 
                 defense.innerHTML = pokemon.stats[2].base_stat
-                  defense.style.width = `${pokemon.stats[2].base_stat}px`
+                  defense.style.width = `${pokemon.stats[2].base_stat-12}px`
 
                 specialAttack.innerHTML = pokemon.stats[3].base_stat
-                  specialAttack.style.width = `${pokemon.stats[3].base_stat}px`
+                  specialAttack.style.width = `${pokemon.stats[3].base_stat-12}px`
 
                 specialDefense.innerHTML = pokemon.stats[4].base_stat
-                  specialDefense.style.width = `${pokemon.stats[4].base_stat}px`
+                  specialDefense.style.width = `${pokemon.stats[4].base_stat-12}px`
 
                 speed.innerHTML = pokemon.stats[5].base_stat
-                  speed.style.width = `${pokemon.stats[5].base_stat}px`
-                  console.log("hp",pokemon.stats[0].base_stat)
-                  console.log("attack",pokemon.stats[1].base_stat)
-                  console.log("defence",pokemon.stats[2].base_stat)
-                  console.log("sa",pokemon.stats[3].base_stat)
-                  console.log("sd",pokemon.stats[4].base_stat)
-                  console.log("speed",pokemon.stats[5].base_stat)
+                  speed.style.width = `${pokemon.stats[5].base_stat-12}px`
+                  // console.log("hp",pokemon.stats[0].base_stat)
+                  // console.log("attack",pokemon.stats[1].base_stat)
+                  // console.log("defence",pokemon.stats[2].base_stat)
+                  // console.log("sa",pokemon.stats[3].base_stat)
+                  // console.log("sd",pokemon.stats[4].base_stat)
+                  // console.log("speed",pokemon.stats[5].base_stat)
 
                 // console.log(pokemon)
                    

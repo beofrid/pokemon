@@ -1,3 +1,4 @@
+*{overflow: hidden;}
 body {
   background-image: linear-gradient(43deg, #3d44b5, #aD44B5, #001126);
   /* background-image: radial-gradient(#DFFCFF, #00EAEB, #001126, #001126, #FD44B5, #F8FDFC); */

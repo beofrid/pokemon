@@ -34,8 +34,8 @@ export default {
 .container{
   margin: 0 auto;
   margin-top: 40px;
-  width: 50vw;
-  height: 50vh;
+  width: 700px;
+  height: 500px;
   background-color: brown;
   display: flex;
   flex-direction: row-reverse;

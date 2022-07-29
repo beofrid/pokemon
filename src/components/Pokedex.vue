@@ -15,59 +15,58 @@ export default {
     <div class="container">
     <header></header>
 
-    <section class="pokedex">
-        <div class="pkdx2"></div>
-        <img src="../assets/pokedexDraw.png" class="pkdx1" alt="Pokedex_Interface">
-        <section class="idContainer font1">
-            <div class="pokemonName font1" id="name"></div>
-            <div class="typeOfPokemon font2" id="pokemonType">type = </div>
-            <img src="/assets/notFound.png" id="img" alt="pokemon">
-        </section>
+    <section class="pokedexInterface">
+    <div class="pkdx2" id="pokedexMiddle"></div>
+    <img src="../assets/pokedexDraw.png" class="pkdx1 transition" id="pokedexTop" alt="Pokedex_Interface">    
+        
+        <div id="pokedexContent" class="pokedexContent pokedexLaunch transition">
+            
+            <section class="idContainer font1">
+                <div class="font1" id="name"></div>
+                <div class="typeOfPokemon font2" id="pokemonType">type = </div>
+                <img src="/assets/notFound.png" id="img" alt="pokemon">
+            </section>
 
-        <!-- Health Points -->
-        <section class="statsContainer font2"> 
-            <div class="stats1">hp</div>
-            <div class="stats2" id="hp"></div>
-        </section>
+            <!-- Health Points -->
+            <section class="statsContainer font2"> 
+                <div class="stats1">hp</div>
+                <div class="stats2" id="hp"></div>
+            </section>
 
-        <!-- Attack -->
-        <section class="statsContainer font2">
-            <div class="stats1">attack </div>
-            <div class="stats2" id="attack"></div>
-        </section>
+            <!-- Attack -->
+            <section class="statsContainer font2">
+                <div class="stats1">attack </div>
+                <div class="stats2" id="attack"></div>
+            </section>
 
-        <!-- defense -->
-        <section class="statsContainer font2">
-            <div class="stats1">defense</div>
-            <div class="stats2" id="defense"></div>
+            <!-- defense -->
+            <section class="statsContainer font2">
+                <div class="stats1">defense</div>
+                <div class="stats2" id="defense"></div>
 
-        </section>
+            </section>
         
-        <!-- special-attack -->
-        <section class="statsContainer font2">
-            <div class="stats1">special-attack</div>
-            <div class="stats2" id="sepcialAttack"><div class="sepcialAttack"></div></div>
+            <!-- special-attack -->
+            <section class="statsContainer font2">
+                <div class="stats1">special-attack</div>
+                <div class="stats2" id="sepcialAttack"></div>
+            </section>
+
+            <!-- special-defense -->
+            <section class="statsContainer font2">
+                <div class="stats1">special-defense</div>
+                <div class="stats2" id="specialDefense"></div>
+            </section>
         
-        </section>
-        
-        <!-- special-defense -->
-        <section class="statsContainer font2">
-            <div class="stats1">special-defense</div>
-            <div class="stats2" id="specialDefense"></div>
-        </section>
-        
-        <!-- speed = -->
-        <section class="statsContainer font2">
-            <div class="stats1">speed</div>
-            <div class="stats2" id="speed"></div>
-        </section>
-        
-        <img src="../assets/pokedexDraw.png" class="pkdx3" alt="Pokedex_Interface"/>
-        
-        
-        
-        
-        
+            <!-- speed = -->
+            <section class="statsContainer font2">
+                <div class="stats1">speed</div>
+                <div class="stats2" id="speed"></div>
+            </section>
+        </div> 
+
+    <img src="../assets/pokedexDrawBottom.png" class="pkdx3 transition" id="pokedexBottom" alt="Pokedex_Interface"/>
+   
     </section>
 
    <footer></footer>
@@ -82,29 +81,47 @@ export default {
     align-items: center;
 }
 
+.transition {
+    transition: transform ease-out 3s;
+}
+.opacity {
+    opacity: 0;
+}
 .pkdx1 {
     position: fixed;
+    margin-left: -2px;
+    z-index: 1;
+    
+        /* display: none; */
+
 }
 .pkdx2 {
-    position:absolute;
+    position:fixed;
     width: 100px;
     height: 108px;
     margin-left: 115px;
     margin-top: 88px;
     border-radius: 50%;
     background-image: radial-gradient(white, lightblue, lightblue, blue, black);
-    background-size: 301% 300%;
-    box-shadow: 4px 4px 8px white,
-        4px -4px 8px white,
-        -4px 4px 8px white,
-        -4px -4px 8px white;
-    transition: all 2s ease;
+    background-size: 300% 300%;
+    box-shadow: 4px 4px 5px white,
+        4px 4px 15px blue,
+        4px -4px 5px white,
+        4px -4px 15px blue,
+        -4px 4px 5px white,
+        -4px 4px 15px blue,
+        -4px -4px 5px white,
+        -4px -4px 15px blue;
+    transition: all 1s ease;
+    z-index: 1;
+    
+
 }
 
 .pkdx3 {
     position: fixed;
-    margin-top: -85px;
-    transform: rotate(180deg);
+    margin-top: -256px;
+    margin-left: -2px;
     /* display: none; */
 }
 .font1 {
@@ -116,19 +133,29 @@ export default {
     font-size: 8pt;
 }
 
-.pokedex {
-    /* min-width: 300px;
-    max-width:30px; */
-    width: 330px;
+.pokedexInterface {
+    
+    width: 326px;
     min-height: 330px;
     max-height: 460px;
+    
+}
+.pokedexContent{
+    width: 326px;
+    height: 400px;
     border-radius: 6%;
     background-image: linear-gradient(45deg, rgb(95, 95, 255), rgb(138, 182, 233));
     overflow: hidden;
     color: white;
     text-shadow: 1px 1px 1px black;
-
 }
+
+.pokedexLaunch {
+    transform: translateY(-125px);
+    filter: contrast(0%);
+    }
+
+
 .statsContainer {
     display: flex;
     justify-content: space-left;
@@ -137,19 +164,26 @@ export default {
     }
 .stats1 { 
     margin-left: 5px;
-    border: 1pt solid black;
+    background: purple;
+    border: 2.5pt inset gray;
     width: 160px;
     min-width: 90px;
-}
-.stats2 {
-    /* border: 1pt solid red; */
+    transform: skew(-8deg);
     box-shadow: inset 3px 3px 5px rgb(80, 9, 9),
         inset -3px -3px 5px rgb(247, 94, 119),
         -1px -1px 3px white;
-        line-height: 180%;
-        margin-left: 2px;
-        font-size: 6pt;
-        text-align: center;
+}
+.stats2 {
+    border: 1pt solid red;
+    background-image: linear-gradient(90deg, gold, peru, orange);
+    transform: skew(-8deg);
+    box-shadow: inset 3px 3px 5px rgb(80, 9, 9),
+        inset -3px -3px 5px rgb(247, 94, 119),
+        -1px -1px 3px white;
+    line-height: 26px;
+    margin-left: 5px;
+    font-size: 6pt;
+    text-align: center;
     }
 
 </style>
